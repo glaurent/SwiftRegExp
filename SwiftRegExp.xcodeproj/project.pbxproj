@@ -15,6 +15,7 @@
 		AF6C01CD1ACD7360008E5327 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C019A1ACC66FF008E5327 /* RegExp.swift */; };
 		AF6C01DE1ACD7476008E5327 /* RegExpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C01A31ACD703B008E5327 /* RegExpTest.swift */; };
 		AF6C01E01ACD74A5008E5327 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C019A1ACC66FF008E5327 /* RegExp.swift */; };
+		AF6C01E21ACEA029008E5327 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AF6C01E11ACEA029008E5327 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		AF6C01B51ACD7337008E5327 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF6C01B81ACD7337008E5327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AF6C01D31ACD746D008E5327 /* SwiftRegExpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRegExpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6C01E11ACEA029008E5327 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		AF6C01761ACC66B0008E5327 = {
 			isa = PBXGroup;
 			children = (
+				AF6C01E11ACEA029008E5327 /* README.md */,
 				AF6C01811ACC66B0008E5327 /* SwiftRegExp */,
 				AF6C018E1ACC66B0008E5327 /* SwiftRegExpTests */,
 				AF6C01AB1ACD7337008E5327 /* DummyTarget */,
@@ -230,6 +233,7 @@
 			files = (
 				AF6C01B11ACD7337008E5327 /* ViewController.swift in Sources */,
 				AF6C01AF1ACD7337008E5327 /* AppDelegate.swift in Sources */,
+				AF6C01E21ACEA029008E5327 /* README.md in Sources */,
 				AF6C01CD1ACD7360008E5327 /* RegExp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +438,7 @@
 				AF6C01C81ACD7337008E5327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF6C01DB1ACD746D008E5327 /* Build configuration list for PBXNativeTarget "SwiftRegExpTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +447,7 @@
 				AF6C01DD1ACD746D008E5327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
