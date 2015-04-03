@@ -1,6 +1,7 @@
 # What is this
 
-SwiftyRegExp is a simple and convenient Swift wrapper around NSRegularExpression.
+SwiftyRegExp is a simple and convenient Swift wrapper around NSRegularExpression. It was inspired by [Ben Scheirman's "RegEx in Swift" post](http://benscheirman.com/2014/06/regex-in-swift/
+)
 
 # Examples
 
