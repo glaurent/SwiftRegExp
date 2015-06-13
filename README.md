@@ -3,6 +3,8 @@
 SwiftyRegExp is a simple and convenient Swift wrapper around NSRegularExpression. It was inspired by [Ben Scheirman's "RegEx in Swift" post](http://benscheirman.com/2014/06/regex-in-swift/
 )
 
+Swift 2 version is in the 'swift2' branch, which will eventually be merged on to master.
+
 # Examples
 
 ## Simple boolean match
