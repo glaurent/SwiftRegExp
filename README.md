@@ -3,6 +3,16 @@
 SwiftyRegExp is a simple and convenient Swift wrapper around NSRegularExpression. It was inspired by [Ben Scheirman's "RegEx in Swift" post](http://benscheirman.com/2014/06/regex-in-swift/
 )
 
+# Install using Cocoapods
+
+    use_frameworks!
+
+    pod "SwiftRegExp", "~> 1.0"
+
+Then import it where you want it:
+
+    import SwiftRegExp
+
 # Examples
 
 ## Simple boolean match
