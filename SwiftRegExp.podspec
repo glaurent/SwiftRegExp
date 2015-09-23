@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftRegExp"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "SwiftyRegExp is a simple and convenient Swift wrapper around NSRegularExpression. It was inspired by Ben Scheirman's \"RegEx in Swift\" post"
   s.homepage         = "https://github.com/glaurent/SwiftRegExp"
   s.license          = 'BSD'
