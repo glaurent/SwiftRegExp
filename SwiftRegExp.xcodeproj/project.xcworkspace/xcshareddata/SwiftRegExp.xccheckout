@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>2B6393EA-8D4F-4A26-B333-136CAFF4F82A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SwiftRegExp</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0B5AC27ED07222367FFF532F0F151EC21A51C84B</key>
 		<string>https://github.com/glaurent/SwiftRegExp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SwiftRegExp.xcodeproj</string>
+	<string>SwiftRegExp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0B5AC27ED07222367FFF532F0F151EC21A51C84B</key>
