@@ -38,7 +38,7 @@ import Foundation
 * Swift wrapper over NSRegularExpression, aiming at giving a Ruby-like API for RegExps.
 * Inspired by http://benscheirman.com/2014/06/regex-in-swift/
 */
-class RegExp: NSObject {
+public class RegExp: NSObject {
 
     var regexp = NSRegularExpression()
 
