@@ -43,7 +43,7 @@ public class RegExp: NSObject {
     var regexp = NSRegularExpression()
 
     /// failable init - will return nil if regexp syntax is misformed
-    init?(pattern:String, options:NSRegularExpressionOptions) throws {
+    public init?(pattern:String, options:NSRegularExpressionOptions) throws {
 
         super.init()
 
@@ -51,7 +51,7 @@ public class RegExp: NSObject {
     }
 
     /// simple boolean match test
-    func isMatching(string:String) -> Bool {
+    public func isMatching(string:String) -> Bool {
 
         let nbMatches = regexp.numberOfMatchesInString(string, options: NSMatchingOptions(rawValue: 0), range: fullRangeForString(string))
 
@@ -59,7 +59,7 @@ public class RegExp: NSObject {
     }
 
     /// returns the matching part of a String
-    func match(string:String) -> String? {
+    public func match(string:String) -> String? {
         let allStringRange = fullRangeForString(string)
 
         if let res = regexp.firstMatchInString(string, options: NSMatchingOptions(rawValue: 0), range: allStringRange) {
@@ -72,7 +72,7 @@ public class RegExp: NSObject {
     }
 
     /// returns all matches (including capture groups) as an array of String
-    func allMatches(string:String) -> [String] {
+    public func allMatches(string:String) -> [String] {
 
         var matches = [String]()
 
@@ -101,11 +101,11 @@ public class RegExp: NSObject {
 /// Some operator overloading
 infix operator =~ {}
 
-func =~ (left:String, right:RegExp) -> String? {
+public func =~ (left:String, right:RegExp) -> String? {
     return right.match(left)
 }
 
-func =~ (left:RegExp, right:String) -> String? {
+public func =~ (left:RegExp, right:String) -> String? {
     return left.match(right)
 }
 
