@@ -42,8 +42,7 @@ public class RegExp: NSObject {
 
     var regexp = NSRegularExpression()
 
-    /// failable init - will return nil if regexp syntax is misformed
-    public init?(pattern:String, options:NSRegularExpressionOptions) throws {
+    public init(pattern:String, options:NSRegularExpressionOptions) throws {
 
         super.init()
 

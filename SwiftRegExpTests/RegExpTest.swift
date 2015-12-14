@@ -26,9 +26,7 @@ class RegExpTest: XCTestCase {
         do {
             let regexp = try RegExp(pattern:"abc", options:NSRegularExpressionOptions.CaseInsensitive)
 
-            XCTAssert(regexp != nil, "RegExp creation passed")
-
-            let isMatching = regexp!.isMatching("foo abc bar")
+            let isMatching = regexp.isMatching("foo abc bar")
 
             XCTAssert(isMatching, "Match test fail")
 
@@ -55,7 +53,7 @@ class RegExpTest: XCTestCase {
             let regexp = try RegExp(pattern:"abc(.*)def(.*)", options:NSRegularExpressionOptions.CaseInsensitive)
 
             let string = "abcXXXdefYYY"
-            let matches = regexp!.allMatches(string)
+            let matches = regexp.allMatches(string)
 
             XCTAssert(matches.count == 3, "number of matches test fail")
             XCTAssert(matches[0] == string, "Wrong 1st match")
@@ -70,7 +68,7 @@ class RegExpTest: XCTestCase {
         do {
             let regexp = try RegExp(pattern:"ab.", options:NSRegularExpressionOptions.CaseInsensitive)
 
-            let match = regexp?.match("abcdef")
+            let match = regexp.match("abcdef")
 
             XCTAssert(match != nil, "No match found")
             XCTAssert(match == "abc", "Wrong match")
@@ -84,7 +82,7 @@ class RegExpTest: XCTestCase {
         do {
             let regexp = try RegExp(pattern:"ab.", options:NSRegularExpressionOptions.CaseInsensitive)
 
-            let match = regexp! =~ "abcdef"
+            let match = regexp =~ "abcdef"
 
             XCTAssert(match == "abc", "Wrong match")
 
@@ -99,7 +97,7 @@ class RegExpTest: XCTestCase {
         do {
             let regexp = try RegExp(pattern:"ab.", options:NSRegularExpressionOptions.CaseInsensitive)
 
-            let match = "abcdef" =~ regexp!
+            let match = "abcdef" =~ regexp
 
             XCTAssert(match == "abc", "Wrong match")
 
