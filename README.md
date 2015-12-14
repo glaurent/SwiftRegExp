@@ -3,11 +3,13 @@
 SwiftyRegExp is a simple and convenient Swift wrapper around NSRegularExpression. It was inspired by [Ben Scheirman's "RegEx in Swift" post](http://benscheirman.com/2014/06/regex-in-swift/
 )
 
+**NOTE** : a better framework with more features can be found at [https://github.com/sharplet/Regex](https://github.com/sharplet/Regex)
+
 # Install using Cocoapods
 
     use_frameworks!
 
-    pod "SwiftRegExp", "~> 1.0"
+    pod "SwiftRegExp", "~> 1.4"
 
 Then import it where you want it:
 
