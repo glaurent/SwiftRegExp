@@ -5,7 +5,7 @@ SwiftyRegExp is a simple and convenient Swift wrapper around NSRegularExpression
 
 **NOTE** : a better framework with more features can be found at [https://github.com/sharplet/Regex](https://github.com/sharplet/Regex)
 
-# Install using Cocoapods
+# Install using CocoaPods
 
     use_frameworks!
 
