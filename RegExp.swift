@@ -40,30 +40,30 @@ import Foundation
 */
 public class RegExp: NSObject {
 
-    var regexp = NSRegularExpression()
+    var regexp = RegularExpression()
 
-    public init(pattern:String, options:NSRegularExpressionOptions) throws {
+    public init(pattern:String, options:RegularExpression.Options) throws {
 
         super.init()
 
-        regexp = try NSRegularExpression(pattern: pattern, options: options)
+        regexp = try RegularExpression(pattern: pattern, options: options)
     }
 
     /// simple boolean match test
-    public func isMatching(string:String) -> Bool {
+    public func isMatching(_ string:String) -> Bool {
 
-        let nbMatches = regexp.numberOfMatchesInString(string, options: NSMatchingOptions(rawValue: 0), range: fullRangeForString(string))
+        let nbMatches = regexp.numberOfMatches(in: string, options: RegularExpression.MatchingOptions(rawValue: 0), range: fullRangeForString(string))
 
         return nbMatches > 0
     }
 
     /// returns the matching part of a String
-    public func match(string:String) -> String? {
+    public func match(_ string:String) -> String? {
         let allStringRange = fullRangeForString(string)
 
-        if let res = regexp.firstMatchInString(string, options: NSMatchingOptions(rawValue: 0), range: allStringRange) {
+        if let res = regexp.firstMatch(in: string, options: RegularExpression.MatchingOptions(rawValue: 0), range: allStringRange) {
             let stringAsNS = string as NSString
-            let firstMatch = stringAsNS.substringWithRange(res.range)
+            let firstMatch = stringAsNS.substring(with: res.range)
             return firstMatch
         } else {
             return nil
@@ -71,19 +71,19 @@ public class RegExp: NSObject {
     }
 
     /// returns all matches (including capture groups) as an array of String
-    public func allMatches(string:String) -> [String] {
+    public func allMatches(_ string:String) -> [String] {
 
         var matches = [String]()
 
         let stringAsNS = string as NSString
 
-        regexp.enumerateMatchesInString(string, options: NSMatchingOptions(rawValue: 0), range: fullRangeForString(string)) {
-            (textCheckingResult:NSTextCheckingResult?, flags:NSMatchingFlags, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+        regexp.enumerateMatches(in: string, options: RegularExpression.MatchingOptions(rawValue: 0), range: fullRangeForString(string)) {
+            (textCheckingResult:TextCheckingResult?, flags:RegularExpression.MatchingFlags, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
 
             if let textCheckingResult = textCheckingResult {
                 for i in 0..<textCheckingResult.numberOfRanges {
 
-                    let subMatch = stringAsNS.substringWithRange(textCheckingResult.rangeAtIndex(i))
+                    let subMatch = stringAsNS.substring(with: textCheckingResult.range(at: i))
                     matches.append(subMatch as String)
                 }
             }
@@ -92,7 +92,7 @@ public class RegExp: NSObject {
         return matches
     }
 
-    private func fullRangeForString(string:String) -> NSRange {
+    private func fullRangeForString(_ string:String) -> NSRange {
         return NSRange(location:0, length:string.characters.count)
     }
 }
