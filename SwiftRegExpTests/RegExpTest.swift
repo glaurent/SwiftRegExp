@@ -24,7 +24,7 @@ class RegExpTest: XCTestCase {
 
     func testIsMatching() {
         do {
-            let regexp = try RegExp(pattern:"abc", options:NSRegularExpressionOptions.CaseInsensitive)
+            let regexp = try RegExp(pattern:"abc", options:RegularExpression.Options.caseInsensitive)
 
             let isMatching = regexp.isMatching("foo abc bar")
 
@@ -38,7 +38,7 @@ class RegExpTest: XCTestCase {
     func testCreationFail() {
 
         do {
-            let _ = try RegExp(pattern:"abc(", options:NSRegularExpressionOptions.CaseInsensitive) // should throw
+            let _ = try RegExp(pattern:"abc(", options:RegularExpression.Options.caseInsensitive) // should throw
 
             XCTFail("RegExp creation test init fail")
 
@@ -50,7 +50,7 @@ class RegExpTest: XCTestCase {
 
     func testMatches() {
         do {
-            let regexp = try RegExp(pattern:"abc(.*)def(.*)", options:NSRegularExpressionOptions.CaseInsensitive)
+            let regexp = try RegExp(pattern:"abc(.*)def(.*)", options:RegularExpression.Options.caseInsensitive)
 
             let string = "abcXXXdefYYY"
             let matches = regexp.allMatches(string)
@@ -66,7 +66,7 @@ class RegExpTest: XCTestCase {
 
     func testMatch() {
         do {
-            let regexp = try RegExp(pattern:"ab.", options:NSRegularExpressionOptions.CaseInsensitive)
+            let regexp = try RegExp(pattern:"ab.", options:RegularExpression.Options.caseInsensitive)
 
             let match = regexp.match("abcdef")
 
@@ -80,7 +80,7 @@ class RegExpTest: XCTestCase {
     func testOperator1() {
 
         do {
-            let regexp = try RegExp(pattern:"ab.", options:NSRegularExpressionOptions.CaseInsensitive)
+            let regexp = try RegExp(pattern:"ab.", options:RegularExpression.Options.caseInsensitive)
 
             let match = regexp =~ "abcdef"
 
@@ -95,7 +95,7 @@ class RegExpTest: XCTestCase {
     func testOperator2() {
 
         do {
-            let regexp = try RegExp(pattern:"ab.", options:NSRegularExpressionOptions.CaseInsensitive)
+            let regexp = try RegExp(pattern:"ab.", options:RegularExpression.Options.caseInsensitive)
 
             let match = "abcdef" =~ regexp
 
