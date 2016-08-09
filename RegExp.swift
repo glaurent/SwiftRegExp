@@ -39,20 +39,20 @@ import Foundation
 * Inspired by http://benscheirman.com/2014/06/regex-in-swift/
 */
 public class RegExp: NSObject {
+    
+    var regexp = NSRegularExpression()
 
-    var regexp = RegularExpression()
-
-    public init(pattern:String, options:RegularExpression.Options) throws {
+    public init(pattern:String, options:NSRegularExpression.Options) throws {
 
         super.init()
 
-        regexp = try RegularExpression(pattern: pattern, options: options)
+        regexp = try NSRegularExpression(pattern: pattern, options: options)
     }
 
     /// simple boolean match test
     public func isMatching(_ string:String) -> Bool {
 
-        let nbMatches = regexp.numberOfMatches(in: string, options: RegularExpression.MatchingOptions(rawValue: 0), range: fullRangeForString(string))
+        let nbMatches = regexp.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: fullRangeForString(string))
 
         return nbMatches > 0
     }
@@ -61,7 +61,7 @@ public class RegExp: NSObject {
     public func match(_ string:String) -> String? {
         let allStringRange = fullRangeForString(string)
 
-        if let res = regexp.firstMatch(in: string, options: RegularExpression.MatchingOptions(rawValue: 0), range: allStringRange) {
+        if let res = regexp.firstMatch(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: allStringRange) {
             let stringAsNS = string as NSString
             let firstMatch = stringAsNS.substring(with: res.range)
             return firstMatch
@@ -77,13 +77,13 @@ public class RegExp: NSObject {
 
         let stringAsNS = string as NSString
 
-        regexp.enumerateMatches(in: string, options: RegularExpression.MatchingOptions(rawValue: 0), range: fullRangeForString(string)) {
-            (textCheckingResult:TextCheckingResult?, flags:RegularExpression.MatchingFlags, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+        regexp.enumerateMatches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: fullRangeForString(string)) {
+            (textCheckingResult:NSTextCheckingResult?, flags: NSRegularExpression.MatchingFlags, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
 
             if let textCheckingResult = textCheckingResult {
                 for i in 0..<textCheckingResult.numberOfRanges {
 
-                    let subMatch = stringAsNS.substring(with: textCheckingResult.range(at: i))
+                    let subMatch = stringAsNS.substring(with: textCheckingResult.rangeAt(i))
                     matches.append(subMatch as String)
                 }
             }
