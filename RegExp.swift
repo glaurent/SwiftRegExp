@@ -98,7 +98,7 @@ public class RegExp: NSObject {
 }
 
 /// Some operator overloading
-infix operator =~ {}
+infix operator =~
 
 public func =~ (left:String, right:RegExp) -> String? {
     return right.match(left)
